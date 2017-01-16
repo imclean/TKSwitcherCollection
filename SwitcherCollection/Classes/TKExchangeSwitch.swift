@@ -139,14 +139,16 @@ private class TKExchangeCircleView : UIView {
     fileprivate func setUpLayer(){
         let radius = min(self.bounds.width, self.bounds.height)
         
-        offLayer.frame = CGRect(x: 0, y: 0, width: radius, height: radius)
-        offLayer.path = UIBezierPath(ovalIn:CGRect(x: 0, y: 0, width: radius, height: radius)).cgPath;
-        offLayer.transform = CATransform3DMakeScale(0, 0, 1)
-        self.layer.addSublayer(offLayer)
-        
         onLayer.frame = CGRect(x: 0, y: 0, width: radius, height: radius)
         onLayer.path =  UIBezierPath(ovalIn:CGRect(x: 0, y: 0, width: radius, height: radius)).cgPath;
         self.layer.addSublayer(onLayer)
+        
+        offLayer.frame = CGRect(x: 0, y: 0, width: radius, height: radius)
+        offLayer.path = UIBezierPath(ovalIn:CGRect(x: 0, y: 0, width: radius, height: radius)).cgPath;
+        //offLayer.transform = CATransform3DMakeScale(0, 0, 1)
+        self.layer.addSublayer(offLayer)
+        
+        
     }
     
     
