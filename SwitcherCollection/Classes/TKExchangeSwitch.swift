@@ -50,7 +50,9 @@ open class TKExchangeSwitch:  TKBaseSwitch, TKViewScale {
     // MARK: - Private Func
     override internal func setUpView(){
         super.setUpView()
-        
+        for view in self.subviews {
+            view.removeFromSuperview()
+        }
         let radius = self.bounds.height/2 - lineWidth
         let position = CGPoint(x: radius, y: radius + lineWidth)
         
